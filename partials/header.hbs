@@ -1,0 +1,44 @@
+{{!-- Navigation Container - Logo, Links, Mobile Menu --}}
+<nav class="lg:flex lg:flex-wrap lg:items-center lg:justify-between pt-2">
+    {{!-- Container - Logo and Mobile Menu --}}
+    <div class="flex justify-between md:ml-5">
+        {{!-- Logo --}}
+        <div class="pl-1">
+            <a class="#" href="{{@site.url}}">
+                {{#if @site.logo}}
+                    <img src="{{@site.logo}}" alt="{{@site.title}}" class="w-50 h-50" />
+                {{else}}
+                    <h1 class="font-serif text-midnight-500">{{@site.title}}</h1>
+                {{/if}}
+            </a>
+        </div>
+        {{!-- Mobile Menu Button --}}
+        <div class="flex items-center pr-1 pb-2 lg:hidden">
+            <button class="mobile-menu px-3 py-2 text-white bg-midnight-400 rounded">
+                <p class="font-bold"><u>Menu</u></p>
+            </button>
+        </div>
+    </div>
+    {{!-- Container - Links and Social Pages --}}
+    <div class="md:flex items-center nav-links hidden">
+        {{!-- Container - Links --}}
+        <div class="flex pt-2">
+        {{navigation}}
+        </div>
+        {{!-- Container - Social Pages --}}
+        <div class="py-5 border-t-2 md:border-0">
+            <ul class="flex justify-around">
+                <li class="px-2"><a href="https://www.linkedin.com/in/connorphillips" title="Linkedin" target="_blank" rel="noopener">{{> icons/linkedin}}</a></li>
+                {{#if @site.facebook}}
+                <li class="px-2"><a href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> icons/facebook}}</a></li>
+                {{/if}}
+                {{#if @site.twitter}}
+                <li class="px-2"><a href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> icons/twitter}}</a></li>
+                {{/if}}
+                <li class="px-2"><a href="https://www.github.com/connorphill" title="Github" target="_blank" rel="noopener">{{> icons/github}}</a></li>
+                <li class="px-2"><a href="https://www.kaggle.com/connorphillips/kernels" title="Kaggle" target="_blank" rel="noopener">{{> icons/kaggle}}</a></li>
+                <li class="px-2"><a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

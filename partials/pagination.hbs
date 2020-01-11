@@ -1,0 +1,9 @@
+<nav class="pagination py-5" role="navigation">
+    {{#if prev}}
+        <a class="newer-posts font-semibold p-2 text-midnight-500 border-2 border-midnight-500 rounded-full hover:text-white hover:bg-midnight-500" href="{{page_url prev}}">&larr; Newer Posts</a>
+    {{/if}}
+    <span class="page-number font-semibold px-8">Page {{page}} of {{pages}}</span>
+    {{#if next}}
+        <a class="older-posts font-semibold p-2 text-midnight-500 border-2 border-midnight-500 rounded-full hover:text-white hover:bg-midnight-500" href="{{page_url next}}">Older Posts &rarr;</a>
+    {{/if}}
+</nav>

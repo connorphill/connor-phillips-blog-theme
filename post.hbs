@@ -1,0 +1,56 @@
+{{!< default}}
+
+{{#post}}
+
+<article class="container mx-auto overflow-hidden p-5 md:px-56 lg:px-64 {{post_class}}">
+    <header class="block text-center">
+        <h1 class="font-serif text-6xl py-3 text-midnight-600">{{title}}</h1>
+        <span class="font-light"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MM - DD - YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
+
+        {{#if custom_excerpt}}
+        <div class="flex justify-center">
+            <p class="bg-gray-200 border-2 border-gray-400 my-4 md:w-3/4 p-4 rounded">{{custom_excerpt}}</p>
+        </div>
+        {{/if}}
+
+        {{#if feature_image}}
+        <div class="flex justify-center">
+            <img class="object-scale-down h-auto w-full" src="{{feature_image}}" alt="{{title}}" />
+        </div>
+        {{/if}}
+    </header>
+
+    <div class="gh-content gh-canvas mt-8">
+        {{content}}
+    </div>
+
+    <footer class="gh-footer gh-canvas">
+
+        <div class="gh-post-authors mt-5">
+            Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
+        </div>
+
+        {{!--
+        <section class="gh-post-comments">
+            If you want to embed comments, this is a good place to do it!
+        </section>
+        --}}
+
+    </footer>
+
+</article>
+
+<aside class="gh-readmore">
+    <div class="gh-readmore-inner gh-container">
+        <div class="gh-readmore-next">
+            {{#next_post}}<a href="{{url}}">{{> "icons/arrow-left"}} <h4 class="font-serif text-midnight-500">{{title}}</h4></a>{{/next_post}}
+        </div>
+        <div class="gh-readmore-prev">
+            {{#prev_post}}<a href="{{url}}">
+                <h4 class="font-serif text-midnight-500">{{title}}</h4> {{> "icons/arrow-right"}}
+            </a>{{/prev_post}}
+        </div>
+    </div>
+</aside>
+
+{{/post}}

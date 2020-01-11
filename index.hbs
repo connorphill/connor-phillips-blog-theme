@@ -1,0 +1,17 @@
+{{!< default}}
+{{> mobile-intro}}
+<div class="container mx-auto overflow-hidden px-24">
+    <div class="flex -mx-24">
+        <div class="md:w-3/4 my-5 px-24">
+        {{#foreach posts}}
+            {{> "card"}} {{!-- partials/card.hbs --}}
+        {{/foreach}}
+        </div>
+        <div class="hidden md:block md:w-1/4 my-5 px-8 mr-5">
+            {{> intro}}
+        </div>
+    </div>
+</div>
+<div class="container mx-auto overflow-hidden px-24 text-center">
+    {{pagination}}
+</div>

@@ -1,0 +1,25 @@
+{{!--
+Re-usable card for linking to posts
+--}}
+
+<article class="{{post_class}}">
+    <div class="flex text-center py-10">
+        <div class="block">
+            <a href="{{url}}">
+                <h2 class="font-serif text-6xl pb-3 text-midnight-400 hover:text-midnight-500">{{title}}</h2>
+            </a>
+            <span class="font-light"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MM - DD - YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
+            {{#if feature_image}}
+            <a href="{{url}}">
+                <img class="object-cover w-screen h-56 pt-3 pb-3" src="{{img_url feature_image}}" alt="{{title}}">
+            </a>
+            {{/if}}
+            <p class="leading-relaxed">
+                {{excerpt}}
+            </p>
+            <a class="block md:inline-block mt-5 border-solid border-2 border-midnight-400 hover:text-white hover:bg-midnight-500 hover:border-midnight-500 hover:underline" href="{{url}}">
+                <p class="font-serif p-2 text-midnight-400 hover:text-white font-bold">Read more</p>
+            </a>
+        </div>
+    </div>
+</article>
