@@ -8,7 +8,18 @@ Re-usable card for linking to posts
             <a href="{{url}}">
                 <h2 class="font-serif text-6xl pb-3 text-midnight-400 hover:text-midnight-500">{{title}}</h2>
             </a>
-            <span class="font-light"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MM - DD - YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
+            <div class="inline-block">
+                <span class="font-light">
+                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MM - DD - YYYY"}}</time> 
+                    <span class="bull">&bull;</span>
+                    {{reading_time}}
+                    {{#primary_tag}}
+                    <a href="{{url}}">
+                        <p class="p-2 my-2 bg-midnight-400 text-white hover:bg-midnight-500">{{name}}</p>
+                    </a>
+                    {{/primary_tag}}
+                </span>
+            </div>
             {{#if feature_image}}
             <a href="{{url}}">
                 <img class="object-cover w-screen h-56 pt-3 pb-3" src="{{img_url feature_image}}" alt="{{title}}">
