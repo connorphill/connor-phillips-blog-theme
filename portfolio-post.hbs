@@ -1,0 +1,18 @@
+{{!< default}}
+{{#page}}
+
+<article class="container mx-auto overflow-hidden p-5 md:px-56 lg:px-64 {{post_class}}">
+  <header class="block text-center">
+    {{#if feature_image}}
+        <div class="flex justify-center">
+            <img class="object-contain h-56 w-full mb-10" src="{{feature_image}}" alt="{{title}}" />
+        </div>
+    {{/if}}
+    <h1 class="post-title">{{title}}</h1>
+  </header>
+  <section class="post-content">
+    {{content}}
+  </section>
+</article>
+
+{{/page}}

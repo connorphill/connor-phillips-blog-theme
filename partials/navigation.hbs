@@ -1,0 +1,5 @@
+<ul class="md:inline-flex">
+    {{#foreach navigation}}
+    <li class="{{link_class for=(url) class=(concat "nav-" slug)}} px-5 py-2 md:py-0" role="menuitem"><a href="{{url absolute="true"}}" class="font-serif text-midnight-500 font-medium hover:text-midnight-500 hover:underline">{{label}}</a></li>
+    {{/foreach}}
+</ul>

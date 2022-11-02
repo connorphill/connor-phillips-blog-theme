@@ -1,0 +1,18 @@
+{{!< default}}
+{{> mobile-intro}}
+<div class="container mx-auto overflow-hidden px-5">
+    <div class="flex">
+        <div class="md:w-3/4 my-5">
+        {{#foreach posts}}
+            {{> "card"}} {{!-- partials/card.hbs --}}
+        {{/foreach}}
+        </div>
+        <div class="hidden md:block md:w-1/4 my-5 ml-24">
+            {{> intro}}
+            {{> newsletter-sidebar-signup-form}}
+        </div>
+    </div>
+</div>
+<div class="container mx-auto overflow-hidden px-24 text-center">
+    {{pagination}}
+</div>
