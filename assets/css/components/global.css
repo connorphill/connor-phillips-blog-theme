@@ -46,7 +46,12 @@ figure,
 figcaption,
 blockquote {
     margin: 0;
-    padding: 0;
+    padding: 5px 0 5px 0;
+}
+
+ul {
+    list-style: circle;
+    list-style-position: inside;
 }
 
 ul[class],
@@ -121,8 +126,13 @@ li:not([class]) + li:not([class]) {
 }
 
 a:not([class]) {
-    color: color(var(--color-primary) l(-5%));
+    color: color(var(--color-sun) l(-5%));
+    font-weight: 600;
     text-decoration-skip-ink: auto;
+}
+
+a:not([class]):hover {
+    color: #695D17;
 }
 
 a[class] {
@@ -132,6 +142,7 @@ a[class] {
 }
 
 a[class]:hover {
+    text-decoration: none;
     transition: 0.2s ease;
 }
 
@@ -144,6 +155,7 @@ h6 {
     margin: 0;
     line-height: 1.15em;
     font-weight: 700;
+    padding: 5px 0px 5px 0px;
 }
 
 h1 {

@@ -9,7 +9,7 @@
         <script>window.location = '{{@site.url}}';</script>
 
     {{else if @member}}
-
+         {{#get "tiers"}}
         {{!-- Logged in, not paying: Check out --}}
         <div class="gh-checkout-form">
             <h1 class="gh-checkout-title">Choose your subscription</h1>
@@ -18,7 +18,7 @@
                 <div class="gh-checkout-plan">
                     <header class="gh-checkout-plan-header">
                         <h3>Monthly</h3>
-                        <span>$</span><strong>{{@price.monthly}}</strong> / month
+                        <span>$</span><strong>{{price monthly_price currency=currency}}</strong> / month
                     </header>
                     <div class="gh-checkout-plan-content">
                         <ul>
@@ -33,7 +33,7 @@
                 <div class="gh-checkout-plan">
                     <header class="gh-checkout-plan-header">
                         <h3>Yearly</h3>
-                        <span>$</span><strong>{{@price.yearly}}</strong> / year
+                        <span>$</span><strong>{{price yearly_price currency=currency}}</strong> / year
                     </header>
                     <div class="gh-checkout-plan-content">
                         <ul>
@@ -48,7 +48,7 @@
                 </div>
             </div>
         </div>
-
+        {{/get}}
     {{else}}
 
         {{!-- Not logged in: Sign up --}}

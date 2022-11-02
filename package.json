@@ -1,7 +1,7 @@
 {
     "name": "connor-phillips",
     "description": "Ghost theme for www.connorphillips.com",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "engines": {
         "ghost": ">=3.0.0",
         "ghost-api": "v3"

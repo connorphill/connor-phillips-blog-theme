@@ -5,7 +5,12 @@
 <article class="container mx-auto overflow-hidden p-5 md:px-56 lg:px-64 {{post_class}}">
     <header class="block text-center">
         <h1 class="font-serif text-6xl py-3 text-midnight-600">{{title}}</h1>
-        <span class="font-light"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MM - DD - YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
+        {{#primary_tag}}
+        <p class="text-gold-600 text-2xl py-5">
+            <a href="{{url}}" class="font-bold hover:text-gold-800 hover:underline">{{name}}</a> 
+        </p>
+        {{/primary_tag}}
+        <span class="font-light"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MM/DD/YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
 
         {{#if custom_excerpt}}
         <div class="flex justify-center">
@@ -15,7 +20,7 @@
 
         {{#if feature_image}}
         <div class="flex justify-center">
-            <img class="object-scale-down h-auto w-full" src="{{feature_image}}" alt="{{title}}" />
+            <img class="object-scale-down h-auto w-full mb-10" src="{{feature_image}}" alt="{{title}}" />
         </div>
         {{/if}}
     </header>
@@ -25,10 +30,11 @@
     </div>
 
     <footer class="gh-footer gh-canvas">
-
+        {{#primary_author}}
         <div class="gh-post-authors mt-5">
-            Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
+            Written by <a href="{{url}}">{{name}}</a>
         </div>
+        {{/primary_author}}
 
         {{!--
         <section class="gh-post-comments">
