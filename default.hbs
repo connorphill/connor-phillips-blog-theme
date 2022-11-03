@@ -13,8 +13,8 @@
     <script>
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
-            'pageCategory': {{#is "index" }}'Homepage'{{/is}}{{#is "page" }}'Page'{{/is}}{{#is "post"}}'Post'{{/is}}{{#is "tag" }}'Tag'{{/is}}{{#is "author" }}'Author'{{/is}},
-            'contentCategory': {{#is "index" }}'Homepage'{{/is}}{{#is "page" }}{{#page}}{{title}}{{/page}}{{/is}}{{#is "post" }}{{#post}}{{#primary_tag}}{{name}}{{/primary_tag}}{{/post}}{{/is}}{{#is "tag" }}{{#tag}}{{name}}{{/tag}}{{/is}}{{#is "author" }}{{#primary_author}}{{name}}{{/primary_author}}{{/is}}
+            'page_category': {{#is "index" }}'Homepage'{{/is}}{{#is "page" }}'Page'{{/is}}{{#is "post"}}'Post'{{/is}}{{#is "tag" }}'Tag'{{/is}}{{#is "author" }}'Author'{{/is}},
+            'content_category': {{#is "index" }}'Homepage'{{/is}}{{#is "page" }}{{#page}}'{{title}}'{{/page}}{{/is}}{{#is "post" }}{{#post}}{{#primary_tag}}'{{name}}'{{/primary_tag}}{{/post}}{{/is}}{{#is "tag" }}{{#tag}}'{{name}}'{{/tag}}{{/is}}{{#is "author" }}{{#primary_author}}'{{name}}'{{/primary_author}}{{/is}}
         });
     </script>
 
